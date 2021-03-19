@@ -2,9 +2,6 @@
 
 - Django REST framework for a powerful API
 - Django ORM for interacting with the database
-- PostgreSQL
-- Unit tests with Pytest
-
 
 ## Development setup 🛠
 
@@ -24,7 +21,7 @@ python3 --version
 ```sh
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements/local.txt
+pip install -r src/requirements.txt
 ```
 ### Database
 Run the database creation with `docker-compose`
@@ -33,6 +30,6 @@ Run the database creation with `docker-compose`
 docker-compose up -d
 ```
 
-The Django API is now accessible at `http://localhost:8000/api/`    
+The Django API is now accessible at `http://localhost:8000/api/sample`    
 
 *Note that it is only tested with Firefox Driver
