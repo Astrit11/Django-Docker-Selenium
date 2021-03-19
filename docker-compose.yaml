@@ -1,0 +1,22 @@
+version: "3"
+services:
+  selenium:
+      build: .
+      container_name: selenium_container
+      image: selenium_image
+      ports:
+        - 4444:4444
+      privileged: true
+      restart: always
+      tty: true
+
+  web:
+        build: .
+        container_name: django_project_container
+        image: django_project_container
+        tty: true
+        command: bash -c "cd ./src && gunicorn config.wsgi:application --bind :8000"
+        ports:
+            - "8000:8000"
+        depends_on:
+            - selenium
